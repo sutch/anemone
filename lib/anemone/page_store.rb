@@ -6,8 +6,9 @@ module Anemone
 
     def_delegators :@storage, :keys, :values, :size, :each
 
-    def initialize(storage = {})
+    def initialize(storage = {}, opts)
       @storage = storage
+      @opts = opts
     end
 
     # We typically index the hash with a URI,
@@ -39,11 +40,11 @@ module Anemone
     end
 
     def touch_key(key)
-      self[key] = Page.new(key)
+      self[key] = @opts[:page_class].new(key)
     end
 
     def touch_keys(keys)
-      @storage.merge! keys.inject({}) { |h, k| h[k.to_s] = Page.new(k); h }
+      @storage.merge! keys.inject({}) { |h, k| h[k.to_s] = @opts[:page_class].new(k); h }
     end
 
     # Does this PageStore contain the specified URL?

@@ -55,7 +55,9 @@ module Anemone
       # proxy server port number
       :proxy_port => false,
       # HTTP read timeout in seconds
-      :read_timeout => nil
+      :read_timeout => nil,
+      # parse pages using Page class
+      :page_class => Anemone::Page,
     }
 
     # Create setter methods for all options to be called from the crawl block
@@ -198,7 +200,7 @@ module Anemone
       @opts = DEFAULT_OPTS.merge @opts
       @opts[:threads] = 1 if @opts[:delay] > 0
       storage = Anemone::Storage::Base.new(@opts[:storage] || Anemone::Storage.Hash)
-      @pages = PageStore.new(storage)
+      @pages = PageStore.new(storage, @opts)
       @robots = Robotex.new(@opts[:user_agent]) if @opts[:obey_robots_txt]
 
       freeze_options

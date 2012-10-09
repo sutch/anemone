@@ -6,7 +6,8 @@ module Anemone
 
     before(:each) do
       FakeWeb.clean_registry
-      @http = Anemone::HTTP.new
+      @http = Anemone::HTTP.new(:page_class => Anemone::Page)
+
       @page = @http.fetch_page(FakePage.new('home', :links => '1').url)
     end
 
