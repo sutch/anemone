@@ -29,7 +29,8 @@ module Anemone
       return @base unless @body_parsed.nil?
       @body_parsed = true
 
-      base = ContentUrls.urls(body, content_type)
+      base = ContentUrls.base_url(body, content_type)
+
       return @base if base.nil?
       base = URI(base) unless base.nil? rescue nil
       @base = base unless base.to_s.empty?

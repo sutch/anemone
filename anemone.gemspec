@@ -1,11 +1,11 @@
 spec = Gem::Specification.new do |s|
-  s.name = "anemone"
+  s.name = "sutch-anemone"
   s.version = "0.7.2"
-  s.author = "Chris Kite"
+  s.author = "Chris Kite (Dennis Sutch's fork)"
   s.homepage = "http://anemone.rubyforge.org"
   s.rubyforge_project = "anemone"
   s.platform = Gem::Platform::RUBY
-  s.summary = "Anemone web-spider framework"
+  s.summary = "Anemone web-spider framework (sutch's fork)"
   s.executables = %w[anemone]
   s.require_path = "lib"
   s.has_rdoc = true
@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README.rdoc"]
   s.add_dependency("nokogiri", ">= 1.3.0")
   s.add_dependency("robotex", ">= 1.0.0")
-  s.add_dependency("content_urls", ">= 0.1.5")
+  s.add_dependency("content_urls", ">= 0.1.8")
 
   s.add_development_dependency "rake", ">=0.9.2"
   s.add_development_dependency "rdoc", ">=3.12"
