@@ -2,6 +2,7 @@
 
 == sutch's branch
 
+  * Changed SQLite3 timeout to allow for other clients to read from database
   * Changed for wmonk: allow restarting of spider by not checking starting URLs
   * Added Anemone::Resource to provide for spidering of resources other than HTML pages
 

@@ -11,6 +11,7 @@ module Anemone
 
       def initialize(file)
         @db = ::SQLite3::Database.new(file)
+        @db.busy_timeout = 4000
         create_schema
       end
 
