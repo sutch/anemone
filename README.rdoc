@@ -6,6 +6,8 @@ write your own specialized spider tasks quickly and easily.
 
 See http://anemone.rubyforge.org for more information.
 
+This branch of Anemone, sutch-anemone, has been enhanced for {wmonk}[https://github.com/sutch/wmonk].
+
 == Features
 * Multi-threaded design for high performance
 * Tracks 301 HTTP redirects
