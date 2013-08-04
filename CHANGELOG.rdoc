@@ -2,6 +2,7 @@
 
 == sutch's branch
 
+  * Changed for wmonk: allow restarting of spider by not checking starting URLs
   * Added Anemone::Resource to provide for spidering of resources other than HTML pages
 
 == 0.7.2 / 2012-05-30

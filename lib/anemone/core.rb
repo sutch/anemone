@@ -168,8 +168,9 @@ module Anemone
     def run
       process_options
 
-      @urls.delete_if { |url| !visit_link?(url) }
-      return if @urls.empty?
+      # trust that we're provided with URLs that have not yet been requested
+      #@urls.delete_if { |url| !visit_link?(url) }
+      #return if @urls.empty?
 
       link_queue = build_queue(@opts[:link_queue_size_limit])
       page_queue = build_queue(@opts[:page_queue_size_limit])
